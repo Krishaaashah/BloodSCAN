@@ -1,9 +1,0 @@
-fastapi
-uvicorn[standard]
-python-multipart
-Pillow
-tensorflow
-numpy
-pandas
-scipy
-matplotlib
