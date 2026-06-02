@@ -1,6 +1,7 @@
 # BloodScan AI
 
-![Methodology](methodology.png)
+<img width="400" height="508" alt="image" src="https://github.com/user-attachments/assets/38f7346d-0b24-44c5-84aa-812ef640ac32" />
+
 
 ## Project Summary
 
@@ -20,13 +21,9 @@ The objective of this repository is to support research-grade ALL screening from
 
 ## Dataset
 
-This project is built around the [C-NMC Leukemia](C-NMC_Leukemia/) dataset.
+This project is built around the [C-NMC Leukemia]([C-NMC_Leukemia/](https://www.kaggle.com/datasets/andrewmvd/leukemia-classification/data)) dataset.
 
-### Dataset Layout
 
-- Training data: [C-NMC_Leukemia/training_data/](C-NMC_Leukemia/training_data/)
-- Validation data: [C-NMC_Leukemia/validation_data/](C-NMC_Leukemia/validation_data/)
-- Testing data: [C-NMC_Leukemia/testing_data/](C-NMC_Leukemia/testing_data/)
 
 ### Classes
 
@@ -71,6 +68,12 @@ This design is meant to capture both low-level texture details and higher-level 
 The project uses five custom quantum-inspired layers, defined in [BloodScanAI_Training.py](BloodScanAI_Training.py) and re-declared for model loading in [predict.py](predict.py).
 
 ### 1. QuantumFeatureFusion
+<img width="1500" height="1200" alt="QAM_confusion_matrix" src="https://github.com/user-attachments/assets/57758d76-d9b8-4b29-9609-586bf9571c87" />
+<img width="1500" height="1200" alt="QFF_confusion_matrix" src="https://github.com/user-attachments/assets/52cee98a-4a2f-4142-b899-fd51b10612b3" />
+<img width="1500" height="1200" alt="QSPM_confusion_matrix" src="https://github.com/user-attachments/assets/3ae64bb5-5983-4903-97d3-bfe4615db56c" />
+<img width="1500" height="1200" alt="QPEL_confusion_matrix" src="https://github.com/user-attachments/assets/a6155d69-68f7-4ce7-9da6-d6d23b579014" />
+<img width="1500" height="1200" alt="QEF_confusion_matrix" src="https://github.com/user-attachments/assets/99006400-32b3-4761-b582-a6a8a756b0ba" />
+
 
 **What it does:**
 It blends projected features using learned phase-like and amplitude-like transformations, then adds the result back into the original feature vector.
@@ -130,6 +133,11 @@ It enriches the feature space and helps the classifier separate ALL from HEM mor
 The training pipeline evaluates several fusion variants because no single fusion style is guaranteed to work best for every feature representation. The custom layers are used to simulate quantum-inspired behaviors such as interference, entanglement, phase rotation, and structured projection. In practice, that means the model is not just stacking visual features; it is transforming and combining them in ways that can reveal stronger class-discriminative patterns in blood smear imagery.
 
 ## Project Architecture
+<img width="1101" height="751" alt="WhatsApp Image 2026-04-21 at 14 54 06 (1)" src="https://github.com/user-attachments/assets/ceed8133-e459-422e-8037-68da6b0eb16b" />
+<img width="836" height="889" alt="WhatsApp Image 2026-04-21 at 14 54 05" src="https://github.com/user-attachments/assets/713b681c-5bfd-40ec-aed6-77685e649b21" />
+<img width="1600" height="743" alt="WhatsApp Image 2026-04-21 at 14 51 47 (1)" src="https://github.com/user-attachments/assets/c8076819-31bf-4628-8cfb-38bae7e87328" />
+<img width="1600" height="743" alt="WhatsApp Image 2026-04-21 at 14 51 47" src="https://github.com/user-attachments/assets/2e23839a-36aa-4395-871d-12a7c9ce931a" />
+
 
 ### Backend
 
@@ -257,17 +265,3 @@ The frontend can use:
 
 - `VITE_API_URL` - backend base URL if you are not using the default `/api` route.
 
-## Notes on Output
-
-- The model comparison metrics are stored in `fusion_results.csv`.
-- Analysis history is saved locally in SQLite so the UI can reload previous reports.
-- Grad-CAM is used to show which image regions most influenced the prediction.
-- The repository also includes plots, summaries, and supporting artifacts from the training process.
-
-## Important Disclaimer
-
-BloodScan AI is intended for portfolio, research, and demonstration purposes only. It is not a medical device and must not be used as a substitute for professional diagnosis, treatment, or clinical decision-making.
-
-## PS
-
-PS: This README now follows the project flow more closely, starting from the summary and objective, then covering the dataset, methodology, quantum-inspired layers, and setup instructions in one place. If you want, I can also add an API reference table or a simple architecture diagram next.
